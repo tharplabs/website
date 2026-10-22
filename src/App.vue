@@ -1,4 +1,11 @@
 <script setup>
+import map800 from './assets/ocean-floor-800.webp'
+import map1400 from './assets/ocean-floor-1400.webp'
+import map2000 from './assets/ocean-floor-2000.webp'
+import mapJpg from './assets/ocean-floor-1400.jpg'
+
+const mapSrcset = `${map800} 800w, ${map1400} 1400w, ${map2000} 2000w`
+
 const credit = {
   name: 'Marie Tharp',
   url: 'https://id.loc.gov/authorities/names/n50012056.html',
@@ -13,11 +20,11 @@ const credit = {
       <picture>
         <source
           type="image/webp"
-          srcset="/ocean-floor-800.webp 800w, /ocean-floor-1400.webp 1400w, /ocean-floor-2000.webp 2000w"
+          :srcset="mapSrcset"
           sizes="(min-width: 1200px) 960px, 88vw"
         />
         <img
-          src="/ocean-floor-1400.jpg"
+          :src="mapJpg"
           alt="World Ocean Floor panorama by Marie Tharp and Bruce Heezen"
           width="1400"
           height="809"
