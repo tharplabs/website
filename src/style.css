@@ -9,6 +9,7 @@ body {
   margin: 0;
   background: #fff;
   color: #111;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Helvetica Now Display', HelveticaNowDisplay, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: -0.009rem;
   -webkit-font-smoothing: antialiased;
 }

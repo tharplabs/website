@@ -14,7 +14,7 @@ const credit = {
         <source
           type="image/webp"
           srcset="/ocean-floor-800.webp 800w, /ocean-floor-1400.webp 1400w, /ocean-floor-2000.webp 2000w"
-          sizes="(min-width: 1200px) 1100px, 92vw"
+          sizes="(min-width: 1200px) 960px, 88vw"
         />
         <img
           src="/ocean-floor-1400.jpg"
@@ -44,21 +44,22 @@ const credit = {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 3vw, 2rem);
-  padding: clamp(1.5rem, 5vw, 4rem) 1rem;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 5rem);
   text-align: center;
 }
 
 .title {
   margin: 0;
   font-size: clamp(1.75rem, 5vw, 3.25rem);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .map {
   margin: 0;
-  width: min(100%, 1100px);
+  width: min(100%, 960px);
 }
 
 .map img {
