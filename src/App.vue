@@ -44,21 +44,39 @@ const credit = {
 </template>
 
 <style scoped>
+/*
+ * The page is locked to the viewport: every vertical measure scales with the
+ * viewport height, and the map's width is capped by the height left over
+ * after the title, caption, email, gaps and padding (--reserved).
+ */
 .page {
-  min-height: 100vh;
-  min-height: 100svh;
+  --pad-y: clamp(1rem, 7vh, 6rem);
+  --pad-x: clamp(1rem, 6vw, 5rem);
+  --gap: clamp(0.75rem, 5vh, 3.5rem);
+  --title-size: clamp(1.25rem, min(5vw, 6vh), 3.25rem);
+  --caption-h: 1.7rem;
+  --contact-h: 1.5rem;
+  --reserved: calc(
+    2 * var(--pad-y) + 2 * var(--gap) + 1.2 * var(--title-size) + var(--caption-h) +
+      var(--contact-h)
+  );
+  --map-ratio: 1.73; /* 3024 x 1748 source image */
+
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(2rem, 5vw, 3.5rem);
-  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 5rem);
+  gap: var(--gap);
+  padding: var(--pad-y) var(--pad-x);
   text-align: center;
 }
 
 .title {
   margin: 0;
-  font-size: clamp(1.75rem, 5vw, 3.25rem);
+  font-size: var(--title-size);
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -66,7 +84,7 @@ const credit = {
 
 .map {
   margin: 0;
-  width: min(100%, 960px);
+  width: min(100%, 960px, (100dvh - var(--reserved)) * var(--map-ratio));
 }
 
 .map img {
@@ -78,6 +96,7 @@ const credit = {
 .credit {
   margin-top: 0.6rem;
   font-size: 0.75rem;
+  line-height: 1.4;
   color: #666;
 }
 
@@ -87,7 +106,8 @@ const credit = {
 
 .contact {
   margin: 0;
-  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
+  line-height: 1.4;
   color: #333;
 }
 </style>

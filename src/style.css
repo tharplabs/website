@@ -9,7 +9,6 @@ body {
   margin: 0;
   background: #fff;
   color: #111;
-  font-family: 'Helvetica Now Display', HelveticaNowDisplay, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  letter-spacing: -0.009rem;
+  font-family: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
