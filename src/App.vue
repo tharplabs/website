@@ -32,7 +32,7 @@ const credit = {
       </figcaption>
     </figure>
 
-    <p class="contact">george[at]tharpslabs[dot]com</p>
+    <p class="contact">george [at] tharplabs [dot] com</p>
   </main>
 </template>
 
