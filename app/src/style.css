@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* The page is a fixed, non-scrolling canvas that always matches the viewport. */
+html,
+body,
+#app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+/* Size container for the page, so cqw/cqh track the visible viewport exactly. */
+#app {
+  container-type: size;
+}
+
+body {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  color: #111;
+  font-family: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

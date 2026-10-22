@@ -50,10 +50,10 @@ const credit = {
  * after the title, caption, email, gaps and padding (--reserved).
  */
 .page {
-  --pad-y: clamp(1rem, 7vh, 6rem);
-  --pad-x: clamp(1rem, 6vw, 5rem);
-  --gap: clamp(0.75rem, 5vh, 3.5rem);
-  --title-size: clamp(1.25rem, min(5vw, 6vh), 3.25rem);
+  --pad-y: clamp(1rem, 7cqh, 6rem);
+  --pad-x: clamp(1rem, 6cqw, 5rem);
+  --gap: clamp(0.75rem, 5cqh, 3.5rem);
+  --title-size: clamp(1.25rem, min(5cqw, 6cqh), 3.25rem);
   --caption-h: 1.7rem;
   --contact-h: 1.5rem;
   --reserved: calc(
@@ -62,8 +62,8 @@ const credit = {
   );
   --map-ratio: 1.73; /* 3024 x 1748 source image */
 
-  height: 100vh;
-  height: 100dvh;
+  position: fixed;
+  inset: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -84,7 +84,7 @@ const credit = {
 
 .map {
   margin: 0;
-  width: min(100%, 960px, (100dvh - var(--reserved)) * var(--map-ratio));
+  width: min(100%, 960px, (100cqh - var(--reserved)) * var(--map-ratio));
 }
 
 .map img {
@@ -106,7 +106,7 @@ const credit = {
 
 .contact {
   margin: 0;
-  font-size: clamp(0.85rem, 2vw, 1.05rem);
+  font-size: clamp(0.85rem, 2cqw, 1.05rem);
   line-height: 1.4;
   color: #333;
 }
